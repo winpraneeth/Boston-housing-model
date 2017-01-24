@@ -14656,7 +14656,7 @@ MzOzAuZkzczMzKyAOVkzMzMzK2D/DxXxujxDyIvkAAAAAElFTkSuQmCC
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
 <p>In a K-fold CV the training set is split into k sets and model is trained (K-1) of the folds and the resultinng model is validated on remaining data. This is repeated for each of the K sets and the final performance measure is the average of all the values reported.</p>
-<p>GridSearchCV is a way of systematically working through multiple combinations of parameter tunes, cross-validating as it goes to determine which tune gives the best performance.</p>
+<p>GridSearchCV is a way of systematically working through multiple combinations of parameter tunes, cross-validating as it goes to determine which tune gives the best performance. The advantage of using cross validation is that it allows maximum possible use of data as each of the data subsets serves as both testing and training data equal number of times. Using cross validation and grid search gives us a systematic way of searching through different levels of complexity to find the optimal model, that gives us an accurate estimate of how well it responds to unknown data</p>
 
 </div>
 </div>
@@ -14692,7 +14692,7 @@ MzOzAuZkzczMzKyAOVkzMzMzK2D/DxXxujxDyIvkAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;make_scorer&#39;, &#39;DecisionTreeRegressor&#39;, and &#39;GridSearchCV&#39;</span>
@@ -14711,7 +14711,7 @@ MzOzAuZkzczMzKyAOVkzMzMzK2D/DxXxujxDyIvkAAAAAElFTkSuQmCC
     <span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">()</span>
 
     <span class="c1"># TODO: Create a dictionary for the parameter &#39;max_depth&#39; with a range from 1 to 10</span>
-    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;max_depth&quot;</span><span class="p">:</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)}</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;max_depth&quot;</span><span class="p">:</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)}</span>
 
     <span class="c1"># TODO: Transform &#39;performance_metric&#39; into a scoring function using &#39;make_scorer&#39; </span>
     <span class="n">scoring_fnc</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">performance_metric</span><span class="p">)</span>
@@ -14754,7 +14754,7 @@ MzOzAuZkzczMzKyAOVkzMzMzK2D/DxXxujxDyIvkAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Fit the training data to the model using grid search</span>
@@ -14838,7 +14838,7 @@ MzOzAuZkzczMzKyAOVkzMzMzK2D/DxXxujxDyIvkAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Produce a matrix for client data</span>
@@ -14902,7 +14902,7 @@ Client 3: $892,850.00
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">vs</span><span class="o">.</span><span class="n">PredictTrials</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">prices</span><span class="p">,</span> <span class="n">fit_model</span><span class="p">,</span> <span class="n">client_data</span><span class="p">)</span>
@@ -14919,17 +14919,17 @@ Client 3: $892,850.00
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Trial 1: $391,183.33
-Trial 2: $424,935.00
+Trial 2: $419,700.00
 Trial 3: $415,800.00
 Trial 4: $420,622.22
-Trial 5: $418,377.27
+Trial 5: $413,334.78
 Trial 6: $411,931.58
 Trial 7: $399,663.16
 Trial 8: $407,232.00
 Trial 9: $351,577.61
 Trial 10: $413,700.00
 
-Range in prices: $73,357.39
+Range in prices: $69,044.61
 </pre>
 </div>
 </div>
